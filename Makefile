@@ -14,3 +14,7 @@ dev-install:
 	pip install -r requirements/dev.txt
 dev-test:
 	python3 manage.py test --settings=config.settings.dev
+dev-user:
+	python3 manage.py createsuperuser --settings=config.settings.dev
+dev-data:
+	python3 manage.py shell < data.py --settings=config.settings.dev
