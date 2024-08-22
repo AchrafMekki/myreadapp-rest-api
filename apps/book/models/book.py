@@ -34,7 +34,12 @@ class BookAuthor(models.Model):
 
 class Book(CreatedModifiedAbstract):
 
-    BOOK_FORMAT = {"eb": "ebook", "hc": "hardcover"}
+    BOOK_FORMAT = {
+                "eb": "ebook",
+                "hc": "hardcover"
+            }
+
+
     isbn = models.CharField(max_length=13, primary_key=True)
     title = models.CharField(max_length=50)
     description = models.TextField(null=True, blank=True)
