@@ -14,7 +14,7 @@ class AuthorSerializer(serializers.ModelSerializer):
     #  Serial
 
     def get_username(self,obj):
-         return '_'.join([obj.first_name, obj.last_name])
+        return '_'.join([obj.first_name, obj.last_name])
 
 
     def validate_first_name(self, value):  # validate_<field_name>
