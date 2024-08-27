@@ -17,7 +17,7 @@ CREATED_APP = [
     "apps.myread.apps.MyreadConfig",
 ]  # custom apps goe here
 
-THIRD_PARTY_APP = ['rest_framework',]  # third party apps goes here
+THIRD_PARTY_APP = ['rest_framework', 'rest_framework.authtoken', 'dj_rest_auth',]  # third party apps goes here
 
 INSTALLED_APPS = [*DEFAULT_APP, *CREATED_APP, *THIRD_PARTY_APP]
 
@@ -78,3 +78,11 @@ USE_TZ = True
 STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Set defaut setting for rest framework
+REST_FRAMEWORK = {
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.TokenAuthentication"
+    ]
+}
