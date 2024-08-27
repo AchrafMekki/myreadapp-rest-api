@@ -21,7 +21,7 @@ def list_books(request):
 # Create Book
 @api_view(["POST"])
 def create_books(request):
-    with transaction.atomic():
+    with transaction.atomic():     #  transaction because create a book and adding the author at the same time  if one of them fails the transaction is canceled 
         data = request.data  # retrieve the request body in native Python data type
 
         authors = data["authors"]
